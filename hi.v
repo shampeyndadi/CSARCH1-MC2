@@ -6,9 +6,9 @@ module FF_T(Q,T,clk, rst);
 
     always @ (posedge clk, negedge rst)
         if (T==0)
-            Q <= Q
+            Q <= Q;
         else 
-            Q <= !Q
+            Q <= !Q;
 endmodule
 
 module ex1(A,B,C,D,Y,reset, clock);
@@ -16,7 +16,7 @@ module ex1(A,B,C,D,Y,reset, clock);
     input Y, reset, clock;
     wire TA, TB, TC, TD;
 
-    assign TA = C&D
+    assign TA = C&D;
     assign TB = D;
     assign TC = 1;
     assign TD = 0;
