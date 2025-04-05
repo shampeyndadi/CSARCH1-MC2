@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module FF_TG(Q,T, clk);
+module FF_T(Q,T, clk);
     input T, clk, rst;
     output reg Q;
 
