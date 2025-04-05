@@ -1,45 +1,41 @@
 `timescale 1ns / 1ps
 
-module ex1_tb;
-    reg clk;
-    reg reset;
-    reg Y;
+module ex1_tb();
     wire A, B, C, D;
+    reg t_Y, t_clk, t_reset;
 
-    // Instantiate the counter
-    ex1 dut (
-        .A(A),
-        .B(B),
-        .C(C),
-        .D(D),
-        .Y(Y),
-        .reset(reset),
-        .clock(clk)
-    );
+    // Instantiate your design with correct signal names
+    ex1 dut(A, B, C, D, t_Y, t_reset, t_clk);
 
-    initial begin
-        // Initialize inputs
-        clk = 0;
-        reset = 0;
-        Y = 0;
-
-        // Monitor the values
-        $monitor("Time = %0t, clk = %b, reset = %b, Y = %b, count = %b%b%b%b", $time, clk, reset, Y, A, B, C, D);
-
-        // Test Case a: Initially reset=0, then after 10 time units, change the reset value to 1
-        #10 reset = 1;
-
-        // Test Case b: Then y=0 and ensure enough simulation time to show the entire counter transition
-        #80 Y = 0;
-
-        // Test Case c: Then y=1 and ensure enough simulation time to show the entire counter transition
-        #80 Y = 1;
-
-        // Finish simulation after enough time
-        #160 $finish;
+    // Clock generation: 10 ns period
+    initial begin 
+        t_clk = 1'b0;
+        forever #5 t_clk = ~t_clk;
     end
 
-    // Generate clock with half cycle of 5 time units
-    always #5 clk = ~clk;
+    // Reset logic
+    initial begin
+        t_reset = 1'b0;   // Active low reset
+        #10 t_reset = 1'b1; // Release reset after 10ns
+    end
+
+    // Input Y toggle logic
+    initial begin
+        t_Y = 1'b1;
+        #70 t_Y = 1'b0;
+        #30 t_Y = 1'b1;
+    end
+
+    // End simulation after 130 ns
+    initial #130 $finish;
+
+    // Display and dump signals
+    initial begin
+        $display("Program by Jed Julian");
+        $monitor("time=%03d, Clk=%b, reset=%b, Y=%b, state=%b%b%b%b", 
+                  $time, t_clk, t_reset, t_Y, A, B, C, D);
+        $dumpfile("jed_julian.vcd"); // ✅ must end with .vcd
+        $dumpvars(0, ex1_tb);        // ✅ dump all variables in this module
+    end
 
 endmodule
