@@ -21,15 +21,15 @@ module ex1_tb();
         end
 
     initial begin
-        t_Y = 1'b1;
-        #30 t_Y = 1'b0;
-        #70 t_Y = 1'b1;
+        t_Y = 1'b0;
+        #10 t_Y = 1'b0;
+        #80 t_Y = 1'b1;
     end
 
-    initial #230 $finish;
+    initial #170 $finish;
 
     initial begin
-        $display("Program by Jedidah Julian, Structural even up-down Binary Counter using T Flip-Flop");
+        $display("Program by Jedidah Julian, Structural model of even up-down Binary Counter using T Flip-Flop");
         $monitor("time=%03d, Clk=%b, reset=%b, Y=%b, state=%b%b%b%b", 
                   $time, t_clk, t_reset, t_Y, t_Q[3], t_Q[2], t_Q[1], t_Q[0]);
         $dumpfile("RJulJ.vcd"); 
