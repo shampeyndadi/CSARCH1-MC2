@@ -1,8 +1,6 @@
 // Name: JULIAN, Jedidiah Kyle M. | Section: S17
 // Testbench for Even Up-Down Binary Counter using T Flip-Flop
 
-`timescale 1ns / 1ps
-
 module ex1_tb();
     wire [3:0] t_Q;
     reg t_Y, t_clk, t_reset;
