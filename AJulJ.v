@@ -1,4 +1,4 @@
-// Name: JULIAN, Jedidiah | Section: S17
+// Name: JULIAN, Jedidiah Kyle M. | Section: S17
 // Structural Model for Even Up-Down Binary Counter using T Flip-Flop
 
 `timescale 1ns/1ps
