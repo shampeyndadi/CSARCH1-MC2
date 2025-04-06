@@ -30,7 +30,7 @@ module ex1_tb();
         $display("Program by Jedidah Julian, Structural model of even up-down Binary Counter using T Flip-Flop");
         $monitor("Time=%03d, Clk=%b, Reset=%b, Y=%b, State=%b%b%b%b", 
                   $time, t_clk, t_reset, t_Y, t_Q[3], t_Q[2], t_Q[1], t_Q[0]);
-        $dumpfile("RJulJ.vcd"); 
+        $dumpfile("AJulJ.vcd"); 
         $dumpvars();        
     end
 
