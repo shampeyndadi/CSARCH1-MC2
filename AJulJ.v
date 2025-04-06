@@ -1,3 +1,6 @@
+// Name: JULIAN, Jedidiah | Section: S17
+// Structural Model for Even Up-Down Binary Counter using T Flip-Flop
+
 `timescale 1ns/1ps
 
 module FF_T(Q, T, clk, rst);

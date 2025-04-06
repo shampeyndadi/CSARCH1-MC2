@@ -1,3 +1,6 @@
+// Name: JULIAN, Jedidiah | Section: S17
+// Testbench for Even Up-Down Binary Counter using T Flip-Flop
+
 `timescale 1ns / 1ps
 
 module ex1_tb();
@@ -23,14 +26,14 @@ module ex1_tb();
         #70 t_Y = 1'b1;
     end
 
-    initial #130 $finish;
+    initial #230 $finish;
 
     initial begin
-        $display("Program by Jed Julian");
+        $display("Program by Jedidah Julian, Structural even up-down Binary Counter using T Flip-Flop");
         $monitor("time=%03d, Clk=%b, reset=%b, Y=%b, state=%b%b%b%b", 
                   $time, t_clk, t_reset, t_Y, t_Q[3], t_Q[2], t_Q[1], t_Q[0]);
-        $dumpfile("jed_julian.vcd"); 
-        $dumpvars(0, ex1_tb);        
+        $dumpfile("RJulJ.vcd"); 
+        $dumpvars();        
     end
 
 endmodule
