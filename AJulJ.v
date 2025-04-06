@@ -16,7 +16,7 @@ module FF_T(Q, T, clk, rst);
             Q <= Q;  
 endmodule
 
-module ex1(A,B,C,D,Y,reset,clock);
+module AJulJ(A,B,C,D,Y,reset,clock);
     output A,B,C,D;
     input Y, clock, reset;
     wire TA, TB, TC, TD;
@@ -26,9 +26,9 @@ module ex1(A,B,C,D,Y,reset,clock);
     assign TC = 1;
     assign TD = 0;
 
-    FF_T FF_A(A,TA,clock, reset);
-    FF_T FF_B(B,TB,clock, reset);
-    FF_T FF_C(C,TC,clock, reset);
-    FF_T FF_D(D,TD,clock, reset);
+    FF_T FF_A(A,TA,clock,reset);
+    FF_T FF_B(B,TB,clock,reset);
+    FF_T FF_C(C,TC,clock,reset);
+    FF_T FF_D(D,TD,clock,reset);
 
 endmodule

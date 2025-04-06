@@ -7,7 +7,7 @@ module ex1_tb();
     wire [3:0] t_Q;
     reg t_Y, t_clk, t_reset;
 
-    ex1 dut(t_Q[3], t_Q[2], t_Q[1], t_Q[0], t_Y, t_reset, t_clk);
+    AJulJ dut(t_Q[3], t_Q[2], t_Q[1], t_Q[0], t_Y, t_reset, t_clk);
 
     initial begin 
         t_clk = 1'b0;
