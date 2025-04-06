@@ -18,7 +18,7 @@ module ex1(A,B,C,D,Y,reset,clock);
     input Y, clock, reset;
     wire TA, TB, TC, TD;
 
-    assign TA = ((~B) & (~C) & Y) | (B & C & Y);
+    assign TA = ((~B) & (~C) & (~Y)) | (B & C & Y);
     assign TB = ((~C) & (~Y)) | (C & Y);
     assign TC = 1;
     assign TD = 0;
