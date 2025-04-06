@@ -14,7 +14,7 @@ module FF_T(Q, T, clk, rst);
             Q <= Q;  
 endmodule
 
-module AJulJ(A,B,C,D,Y,reset,clock);
+module AJulJ(A,B,C,D,Y,clock,reset);
     output A,B,C,D;
     input Y, clock, reset;
     wire TA, TB, TC, TD;
